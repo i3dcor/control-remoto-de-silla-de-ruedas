@@ -1,0 +1,78 @@
+//#include <ESP32Servo.h>
+
+#include "BluetoothSerial.h"
+
+#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)
+#error Bluetooth is not enabled! Please run `make menuconfig` to and enable it
+#endif
+
+
+bool connected;
+
+int swPin = 25;
+int YPin = 33;
+int XPin = 32;
+
+int valy=0;
+int valx=0;
+bool valsw;
+char cvalsw;
+
+char cstr[12];
+
+BluetoothSerial SerialBT;
+
+void setup() {
+  //Serial monitor setup
+  Serial.begin(115200);
+  
+  SerialBT.begin("MINIMANDO", true); //Bluetooth device name
+  Serial.println("MINIMANDO OK");
+
+  pinMode(swPin, INPUT_PULLUP);
+  pinMode(YPin, INPUT); 
+  pinMode(XPin, INPUT);
+
+  connected= SerialBT.connect("MINIHORIZON");
+ if(connected){
+    Serial.println("Connected Succesfully!");
+ }
+ else{
+    while(!SerialBT.connected(10000)) {
+      Serial.println("Failed to connect. Make sure remote device is available and in range, then restart app."); 
+    }
+ }
+
+}
+
+void loop() {
+  
+  valy = analogRead(YPin);
+  valx = analogRead(XPin);
+  valsw= digitalRead(swPin);
+
+  if(valsw==true){
+    cvalsw='t';
+  }
+  else{
+    cvalsw='f';
+  }
+  
+  //sprintf(cstr,"%04d\n",valx);
+  sprintf(cstr,"%04dx%04dy%c\n",valx,valy,cvalsw);
+  
+  SerialBT.write(cstr[0]); //1 valx
+  SerialBT.write(cstr[1]); //2 valx
+  SerialBT.write(cstr[2]); //3 valx
+  SerialBT.write(cstr[3]); //4 valx
+  SerialBT.write(cstr[4]); // 'x'
+  SerialBT.write(cstr[5]); //1 valy
+  SerialBT.write(cstr[6]); //2 valy
+  SerialBT.write(cstr[7]); //3 valy
+  SerialBT.write(cstr[8]); //4 valy
+  SerialBT.write(cstr[9]); // 'y'
+  SerialBT.write(cstr[10]); // 't' o 'f' boton
+  SerialBT.write(cstr[11]); // '\n'
+  
+  delay(200);
+}

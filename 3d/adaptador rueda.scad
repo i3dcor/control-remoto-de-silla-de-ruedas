@@ -1,0 +1,9 @@
+distancia_tornillos=40;
+diametro1=50.5;
+diametro2=30.8;
+diametro_tornillo=5;
+grosor1=12;
+grosor2=8;
+largo_eje=26.6;
+diametro_eje=16.6;
+diametro_eje2=11.6;

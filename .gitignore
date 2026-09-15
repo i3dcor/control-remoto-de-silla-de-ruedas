@@ -1,0 +1,17 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+
+# Local tooling state
+.repo-git/
+.agents/
+.codex/
+
+# Generated/build output
+node_modules/
+dist/
+build/
+*.log
