@@ -15,3 +15,8 @@ node_modules/
 dist/
 build/
 *.log
+# Local Pi runtime state
+.atl/
+
+# Private invoices
+doc/facturas/
