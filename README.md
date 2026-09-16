@@ -26,6 +26,29 @@ Transmite por **radio micro:bit, grupo 1**, tres mensajes separados: `reverse`, 
 - **Actualización y enlace:** la pausa de 500 ms limita la frecuencia de actualización. El emisor no comprueba confirmaciones del receptor; tampoco permite verificar cómo se detienen los motores ante una pérdida de señal.
 - **Pruebas:** [test.ts](microbit-joystick-2-ruedas/test.ts) contiene únicamente un comentario, sin pruebas implementadas. Queda por verificar el comportamiento del conjunto sobre el hardware real.
 
+## Evolución prevista
+
+Los documentos de diseño describen una evolución por etapas. Sirven para entender la intención del proyecto; no deben leerse como una lista de funciones ya terminadas.
+
+| Etapa | Objetivo | Relación con el repositorio actual |
+|---|---|---|
+| Concepto y primer prototipo | Probar la asistencia eléctrica con dos motores, batería, controladoras y un control alternativo al joystick. También se estudió un mando por móvil/Bluetooth y giroscopio de cabeza. | Hay diseños, firmware compilado y experimentos, pero no una prueba completa documentada del conjunto. |
+| Control adaptable | Dirigir las dos ruedas con un mando inalámbrico adaptable a una mano, con anclaje rápido, sistema antivuelco, cajas protegidas y baterías adecuadas. | El emisor micro:bit por radio es la implementación más cercana; faltan la integración completa y la validación ergonómica. |
+| Personalización | Ajustar velocidad y dirección, aumentar potencia y mejorar el comportamiento en campo, pendientes y superficies irregulares. | Es una línea de desarrollo posterior; el repositorio contiene piezas y diseños relacionados, sin criterios de rendimiento cerrados. |
+| Asistencia eléctrica | Detectar el movimiento de las manos y de las ruedas con pulseras o sensores para activar la asistencia de forma progresiva. | Es una propuesta futura basada en sensores y aprendizaje; no está implementada en el emisor actual. |
+
+## Documentos de diseño
+
+Los PDF conservados en [`doc/`](doc/) recogen versiones sucesivas del planteamiento:
+
+- [Memoria silla eléctrica](doc/Memoria%20silla%20el%C3%A9ctrica.pdf): motivación, caso de uso y fases de adaptación al entrenamiento canino.
+- [Silla de ruedas eléctrica personalizable](doc/Silla%20de%20ruedas%20el%C3%A9ctrica%20personalizable.pdf): primera planificación de control alternativo y asistencia eléctrica.
+- [Silla de ruedas eléctrica personalizable v2](<doc/Silla de ruedas eléctrica personalizable-v2.pdf>): amplía la hoja de ruta con control a una mano, personalización y asistencia futura.
+- [Silla de ruedas con asistencia eléctrica v1](<doc/Silla de ruedas con asistencia eléctrica v1.pdf>): lista inicial de componentes, costes aproximados y fases del primer prototipo.
+- [Silla de ruedas con asistencia eléctrica v1, 2019-02-12](<doc/Silla de ruedas con asistencia eléctrica v1 2019-02-12.pdf>): copia fechada de la planificación inicial.
+
+Las versiones presentan estimaciones diferentes de tiempos y costes, por lo que esas cifras son referencias de planificación histórica. Antes de construir o modificar el sistema hay que definir una lista de materiales, requisitos de seguridad, presupuesto y criterios de prueba actualizados.
+
 ## Navegación del proyecto
 
 | Material | Qué contiene |
