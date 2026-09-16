@@ -34,10 +34,13 @@ Transmite por **radio micro:bit, grupo 1**, tres mensajes separados: `reverse`, 
 | [microbit/](microbit/) | Archivos de firmware compilado, incluido el receptor de radio. |
 | [3d/](3d/) | Modelos de carcasas del mando, adaptadores, abrazaderas y cajas de batería en STL, 3MF y OpenSCAD. |
 | [doc/](doc/) | Memorias, propuestas, imágenes y vídeos del desarrollo; entre los documentos figura «Memoria silla eléctrica.pdf». |
+| [doc/referencias/](doc/referencias/) | Material de investigación: marcadores, hojas de datos y diseños de referencia recopilados durante el desarrollo. |
 | [ble/](ble/) | Experimentos y referencias Bluetooth Low Energy para ESP32 y MicroPython. Son una línea de exploración distinta del emisor por radio; [ble_joystick.py](ble/esp32micropython/ble_joystick.py) contiene un ejemplo de temperatura simulada. |
-| [bldc-hardware/](bldc-hardware/README.md) | Diseños de referencia del controlador VESC, con esquemas y archivos KiCad. |
-| [Joystick-Controlled-Wheelchair-BLDC-master/](Joystick-Controlled-Wheelchair-BLDC-master/wheelchair_simple_with_brake/README.md) | Referencia de control de silla con Arduino Mega y motores BLDC. No demuestra su integración con el mando micro:bit. |
+| [doc/referencias/bldc-hardware/](doc/referencias/bldc-hardware/README.md) | Diseños de referencia del controlador VESC, con esquemas y archivos KiCad. |
+| [doc/referencias/Joystick-Controlled-Wheelchair-BLDC-master/](doc/referencias/Joystick-Controlled-Wheelchair-BLDC-master/wheelchair_simple_with_brake/README.md) | Referencia de control de silla con Arduino Mega y motores BLDC. No demuestra su integración con el mando micro:bit. |
 
 ## Licencias y procedencia
 
-La raíz incluye una [licencia GNU AGPL v3](LICENSE). También se conservan materiales de terceros con avisos propios: el [hardware VESC](bldc-hardware/README.md) declara CC BY-SA 4.0 y la [carcasa Mini Joystick Housing](3d/Mini_Joystick_Housing__With_Space_For_Arduino_Micro_Pro_Leonardo/LICENSE.txt) declara CC BY 3.0. Consulta la procedencia y los avisos de cada componente antes de reutilizarlo; no se presupone una licencia uniforme para todo el repositorio.
+La raíz incluye una [licencia GNU AGPL v3](LICENSE). También se conservan materiales de terceros con avisos propios: el [hardware VESC](doc/referencias/bldc-hardware/README.md) declara CC BY-SA 4.0 y la [carcasa Mini Joystick Housing](3d/Mini_Joystick_Housing__With_Space_For_Arduino_Micro_Pro_Leonardo/LICENSE.txt) declara CC BY 3.0. Consulta la procedencia y los avisos de cada componente antes de reutilizarlo; no se presupone una licencia uniforme para todo el repositorio.
+
+Este repositorio es público. El material de terceros conserva su propia licencia y atribución; antes de reutilizar cualquier parte, revisa el aviso correspondiente a ese componente.
